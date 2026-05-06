@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Suscripción</title>
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        text-align: center;
+        animation: aparecer 0.8s ease;
+    }
+
+    h2 {
+        color: #3a86ff;
+    }
+
+    input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 10px;
+        border: 2px solid #ddd;
+        transition: 0.3s;
+    }
+
+    input:focus {
+        border-color: #3a86ff;
+        outline: none;
+        transform: scale(1.05);
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    button {
+        background: #3a86ff;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #265df2;
+        transform: scale(1.05);
+    }
+
+    #mensaje2 {
+        margin-top: 15px;
+        color: green;
+        font-weight: bold;
+        display: none;
+        animation: aparecer 0.5s ease;
+    }
+
+    @keyframes aparecer {
+        from {opacity: 0; transform: translateY(-10px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+</style>
+
+</head>
+<body>
+
+<div class="card">
+    <h2>📩 Suscripción</h2>
+
+    <form id="formSuscripcion">
+        <input type="email" placeholder="Correo electrónico" required>
+
+        <label>
+            <input type="checkbox" required>
+            Acepto términos y condiciones
+        </label>
+
+        <br><br>
+
+        <button type="submit">Suscribirse</button>
+    </form>
+
+    <p id="mensaje2">✅ ¡Suscripción exitosa!</p>
+</div>
+
+<script>
+    const form2 = document.getElementById("formSuscripcion");
+    const mensaje2 = document.getElementById("mensaje2");
+
+    form2.addEventListener("submit", function(e) {
+        e.preventDefault();
+        mensaje2.style.display = "block";
+        form2.reset();
+    });
+</script>
+
+</body>
+</html>
